@@ -43,6 +43,7 @@ namespace spambot7k
         static void waitstop()
         {
             Console.WriteLine("Tekan F2 lagi untuk menghentikan spam");
+            bot.WaitF2();
             stop = true;
         }
     }
