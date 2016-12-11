@@ -23,7 +23,12 @@ namespace spambot7k
         private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
         private const int MOUSEEVENTF_RIGHTUP = 0x10;
 
-        public static void StartLogging()
+        public static void WaitF2()
+        {
+            WaitKey(VK_F2);
+        }
+
+        public static void WaitKey(int key)
         {
             bool stop = false;
             while (!stop)
@@ -35,7 +40,7 @@ namespace spambot7k
                     int keyState = GetAsyncKeyState(i);
                     if (keyState == 1 || keyState == -32767)
                     {
-                        if (i == VK_F2)
+                        if (i == key)
                             stop = true;
                         break;
                     }
