@@ -19,9 +19,11 @@ namespace spambot7k
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Tekan F1 untuk mulai spam");
-            HotKeyManager.StartLogging();
+            Console.WriteLine("Tekan F2 untuk mulai spam");
+            bot.StartLogging();
             Console.WriteLine("Memulai spam");
+            bot.DoClick();
+            bot.send("coba");
             return;
         }
     }
