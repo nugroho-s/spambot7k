@@ -15,7 +15,7 @@ namespace spambot7k
         public static extern void mouse_event(uint dwFlags, int dx, int dy, uint cButtons, uint dwExtraInfo);
 
         //VK hotkey
-        private static int VK_F2 = 0x71;
+        private static int VK_F12 = 0x7B;
 
         //Mouse Event
         private const int MOUSEEVENTF_LEFTDOWN = 0x02;
@@ -23,9 +23,9 @@ namespace spambot7k
         private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
         private const int MOUSEEVENTF_RIGHTUP = 0x10;
 
-        public static void WaitF2()
+        public static void WaitF12()
         {
-            WaitKey(VK_F2);
+            WaitKey(VK_F12);
         }
 
         public static void WaitKey(int key)
@@ -48,10 +48,27 @@ namespace spambot7k
             }
         }
 
-        public static void send(String x)
+        public static void Send(String x)
         {
             SendKeys.SendWait(x);
+            Thread.Sleep(100);
             SendKeys.SendWait("{enter}");
+        }
+
+        public static void SendSpam(String x)
+        {
+            DoClick();
+            Thread.Sleep(200);
+            Send(x);
+            Thread.Sleep(200);
+        }
+
+        public static void SendNotice(String x)
+        {
+            DoClick();
+            Thread.Sleep(500);
+            Send(x);
+            Thread.Sleep(500);
         }
 
         public static void DoClick()

@@ -22,29 +22,51 @@ namespace spambot7k
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Tekan F2 untuk mulai spam");
-            bot.WaitF2();
+            writeanim("Bot spam 7k");
+            writeanim("Created by IGN puckingfanda");
+            writeanim("======================");
+            writeanim("Tekan F12 untuk mulai spam");
+            bot.WaitF12();
             Console.WriteLine("Memulai spam");
+            bot.SendNotice("brace yourself");
+            bot.SendNotice("spammer has come");
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             Thread waiter = new Thread(waitstop);
             waiter.Start();
             int spam = 1;
             while (!stop)
             {
-                Thread.Sleep(200);
-                bot.DoClick();
-                bot.send(spam.ToString());
-                Thread.Sleep(200);
+                bot.SendSpam(spam.ToString());
+                //if (spam == 5000)
+                //    break;
                 spam++;
             }
+            watch.Stop();
+            bot.SendNotice("======================");
+            spam--;
+            bot.SendNotice("total spam = " + spam);
+            bot.SendNotice("total waktu = " + watch.Elapsed.ToString());
+            bot.SendNotice("created by IGN puckingfanda");
             waiter.Join();
+            Console.WriteLine("bot dihentikan");
             return;
         }
 
         static void waitstop()
         {
-            Console.WriteLine("Tekan F2 lagi untuk menghentikan spam");
-            bot.WaitF2();
+            Console.WriteLine("Tekan F12 lagi untuk menghentikan spam");
+            bot.WaitF12();
             stop = true;
+        }
+
+        static void writeanim(String x)
+        {
+            foreach(char c in x)
+            {
+                Console.Write(c);
+                Thread.Sleep(50);
+            }
+            Console.WriteLine();
         }
     }
 }

@@ -15,6 +15,7 @@ Global
 		{F37A9594-D5E1-4E5C-9457-CC7C747B08DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F37A9594-D5E1-4E5C-9457-CC7C747B08DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F37A9594-D5E1-4E5C-9457-CC7C747B08DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37A9594-D5E1-4E5C-9457-CC7C747B08DD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
